@@ -1,0 +1,33 @@
+html {margin: 0;padding: 0;font-family:Lato,sans-serif}
+/* .element {opacity: 0;transform: translateY(-30px);} */
+.dropzon {width: 100%;height: 100%;margin: auto;border: 2px solid var(--pure);border-radius: 10px;position: fixed;}
+.dropzon .entt {margin: 0;background-color: var(--leger);font-size: 1.4rem;padding: 2%}
+.f28 {font-size: 2.8rem!important;color: green;}
+.m10 {margin: 10%;}
+.dropzon .dropzone {height: 100%;width: 100%;border: none;}
+.hide {display: none;animation-duration: 1s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;animation-name: fadeInUp}
+.hidd {display: block!important;z-index: 9!important;animation-duration: 1s;
+-webkit-animation-fill-mode: both;
+animation-fill-mode: both;animation-name: fadeInUp}
+.fa-check {color: green;}
+.fa-exclamation-triangle {color: red;}
+.user {position: fixed;right: 5%;bottom: 5%;z-index: 5000;text-align: center;transition: 500ms all}
+.user .user_info {width: auto;height: auto;background-color: var(--midnightblue);padding: 2%;font-size: 1.3rem;color: #cebcbc;border-radius: 8px;display: none;}
+.user .user_info li {list-style: none;padding: 2%;}
+.user .user_info a {color: #cebcbc;transition: 300ms all;font-weight: bolder;}
+.user .user_info i {font-size: 1.5rem;font-weight: bolder;}
+.user .user_info a:hover {color: white;}
+.user_info_ul {padding: 5%;text-align: left;}
+.user_lg {height: 100px;width: 100px;margin: auto;border-radius: 50%;font-size: 4rem;background-color: var(--midnightblue);color:#cebcbc;line-height: 1.5}
+.mainBlue .mix-gallery {
+  transition: 1s all;
+  -webkit-filter: blur(5px) saturate(1.6);
+  filter: blur(5px) brightness(80%);
+}
+@media screen and (max-width: 1000px) {
+  .user_info a,.user_info_ul,.user_info i { font-size: 3rem!important;}
+  .user_lg {width: 200px;height: 200px;font-size: 8rem;line-height: 1.7}
+  .dropzon,.dropzon .entt {font-size: 4rem!important;}
+}
