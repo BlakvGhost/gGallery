@@ -34,6 +34,7 @@ Then dump the **Providers/gallery.sql** into your new database
 ## Tech Stack
 
 **Client:** HTML5, CSS3, ES6, JQuery
+
 **Server:** PHP
 
 ## Authors
