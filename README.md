@@ -1,5 +1,5 @@
 # gGallery
- Une petite application web ecrit en PHP fonctionnant comme une web gallery, pour le stockage des images, videos, documents...avec systeme de upload sans rechargement de la page.
+ A small web application written in PHP working as a web gallery, for storing images, videos, documents...with upload system without reloading the page.
 
 ## Installation
 
@@ -23,6 +23,13 @@ Host the project on a local server for your test, or host it on a shared hosting
 Then dump the **Providers/gallery.sql** into your new database
 
 **You can edit the function bDConnect() in Provider/AuthServiceProvider.php for your database**
+
+## Screenshots
+
+![App Login Screenshot](screenshot-login.png)
+![App Home Screenshot](screenshot-home.png)
+![App User Screenshot](screenshot-user.png)
+![App Dropzone Screenshot](screenshot-dropzone.png)
 
 ## Tech Stack
 
