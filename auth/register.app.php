@@ -24,10 +24,10 @@ include '../meta.php';
             </div>
             <form action="controller/Register.controller.php" method="post">
               <div class="my-2">
-                <input type="text" required class="form-control bg-light" id="username" name="username" placeholder="Your Username *">
+                <input type="email" required class="form-control bg-light" id="userEmail" name="email" placeholder="Your Email *">
               </div>
               <div class="my-2">
-                <input type="email" required class="form-control bg-light" id="userEmail" name="email" placeholder="Your Email *">
+                <input type="text" required class="form-control bg-light" id="username" name="username" placeholder="Your Username *">
               </div>
               <div class="my-2 input-group">
                 <input type="password" class="form-control bg-light" name="password1" placeholder="Your Password">

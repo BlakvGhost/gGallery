@@ -2,20 +2,6 @@
  
  require '../Providers/AuthServiceProvider.php';
 
-// class AppServiceProvider extends AuthServiceProvider
-// {
-//     // protected $db = $this->bDConnect();
-    
-//     static function user($id)
-//     {
-
-//         $db = parent::bDConnect();
-//         $query = $db->prepare("SELECT * FROM Gl_users WHERE id = ?");
-//         $query->execute(array($id));
-//         return $query->fetch();
-//     }
-// }
-
 function user($id)
 {
     $db = AuthServiceProvider::bDConnect();

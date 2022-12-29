@@ -2,7 +2,7 @@
 include '../meta.php';
 include '../Providers/AppServiceProvider.php';
 
-isset($_SESSION['online'])? null: header("Location:/GalleryApp/auth/login.app.php");
+isset($_SESSION['online'])? null: header("Location:../auth/login.app.php");
 ?>
 <div class="user">
   <div class="user_info bxs">
@@ -19,11 +19,6 @@ isset($_SESSION['online'])? null: header("Location:/GalleryApp/auth/login.app.ph
       <li><u>Username</u> : <?php echo $user['username'] ?> </li>
       <li><u>Storage</u> : <?php echo sumSize($_SESSION['id']) ?> / 2 Go </li>
     </ul>
-    <!-- <div class="my-3">
-      <h5>Share with Public</h5>
-      <a href="?page=add_image" class=""><i class="mdi mdi-cloud-upload"></i> Upload</a>
-      <a href="?page=add_image" class=""><i class="mdi mdi-plus-circle"></i> View</a>
-    </div> -->
   </div>
   <div class="user_lg bxs">
     <p class="m10"><i class="mdi mdi-account"></i> </p>

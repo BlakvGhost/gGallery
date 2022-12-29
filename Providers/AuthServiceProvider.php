@@ -6,22 +6,26 @@ class AuthServiceProvider
 
     static function isLogin()
     {
-        $to =  isset($_SESSION['online']) ? "/GalleryApp/gallery/" : "/GalleryApp/auth/login.app.php";
+        $to =  isset($_SESSION['online']) ? "/gallery/" : "/auth/login.app.php";
         return header('Location:' . $to);
     }
 
     static function isGuest()
     {
-        return !isset($_SESSION['online'])? null: header("Location:/GalleryApp/gallery/");   
+        return !isset($_SESSION['online'])? null: header("Location:/gallery/");   
     }
 
-    public function checkUser($user)
+    public function checkUser($user, $email = false)
     {
         $db = $this->bDConnect();
 
         $query = $db->prepare('SELECT * FROM Gl_users WHERE email = ?');
         $query->execute(array($user['email']));
-        if ($data = $query->fetch()) {
+        $data = $query->fetch();
+        if ($email) {
+            return $data;
+        }
+        if ($data && !$email) {
             if (password_verify($user['mdp'], $data['mdp'])) {
                 $add = $db->prepare("UPDATE Gl_users SET status = 'online', last_UA = ?, last_date = ? WHERE id=?");
                 $add->execute(array($_SERVER['HTTP_USER_AGENT'], date('Y-m-d H:i:s'), $data['id']));
@@ -33,7 +37,7 @@ class AuthServiceProvider
 
     static function redirectTo($to, $message = '')
     {
-        $to =  '/GalleryApp/' . 'auth/' . $to . '.app.php' . '?message=' . $message;
+        $to =  '/' . 'auth/' . $to . '.app.php' . '?message=' . $message;
 
         return header('Location:' . $to);
     }

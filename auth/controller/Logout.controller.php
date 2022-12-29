@@ -3,8 +3,8 @@
 
   $db = AuthServiceProvider::bDConnect();
   if ($db) {
-    $query = $db->prepare("UPDATE Gl_users SET status = 'offline' WHERE id=?");
-    $query->execute(array($_SESSION['id']));
+    $query = $db->prepare("UPDATE Gl_users SET status = 'offline' WHERE email=?");
+    $query->execute(array($_SESSION['email']));
     session_destroy();
   }
   

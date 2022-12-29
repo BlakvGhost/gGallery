@@ -11,10 +11,15 @@ if (isset($_POST['submit'])) {
     if (!empty($user['email']) && !empty($user['username']) && !empty($user['mdp'])) {
         if (password_verify($_POST['password2'], $user['mdp'])) {
             $model = AuthServiceProvider::bDConnect();
+            $m = new AuthServiceProvider;
+            if ($m->checkUser($user, true)) {
+                return AuthServiceProvider::redirectTo('register', "User Already Exist");
+            }
             $pk = $model->prepare('INSERT INTO Gl_users(email, mdp, username) VALUES (:email, :mdp, :username)');
-            if ($us = $pk->execute($user)) {
+            if ($pk->execute($user)) {
                 $_SESSION['online'] = true;
-                $_SESSION['id'] = $us['id'];
+                $user_d = $m->checkUser($user, true);
+                $_SESSION['id'] = $user_d['id'];
                 return header('Location:../../gallery/');
             }
             return AuthServiceProvider::redirectTo('register', "Invalid data");
