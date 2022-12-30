@@ -11,6 +11,8 @@ Install gGallery with GitHub
 
 Host the project on a local server for your test, or host it on a shared hosting service or a VPS.
 
+You can test and create your account [here](https://g-gallery-app.000webhostapp.com)
+
   ### Database
   Create a new database:
   | Attr             | Value                                                                |

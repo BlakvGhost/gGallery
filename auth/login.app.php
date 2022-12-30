@@ -1,5 +1,4 @@
 <?php
-session_start();
 include_once '../Providers/AuthServiceProvider.php';
 
 AuthServiceProvider::isGuest();
