@@ -1,5 +1,5 @@
 # gGallery
- A small web application written in PHP working as a web gallery, for storing images, videos, documents...with upload system without reloading the page.
+Small web application written in PHP working as a web gallery, for storing images, videos, documents...with upload system without reloading the page.
 
 ## Installation
 
