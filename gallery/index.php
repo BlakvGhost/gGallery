@@ -25,7 +25,7 @@ include '../meta.php';
   </div>
 </div>
 <?php
-$get = $_GET;
+ $get = $_GET;
  $media = view_medias($_SESSION['id']);
 if (isset($get['page'])) {
   switch ($get['page']) {
@@ -42,6 +42,7 @@ if (isset($get['page'])) {
       include 'page.php';
       break;
   }
+  
 } else {
   include 'page.php';
 }
