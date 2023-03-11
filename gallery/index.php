@@ -26,29 +26,23 @@ include '../meta.php';
 </div>
 <?php
 $get = $_GET;
+ $media = view_medias($_SESSION['id']);
 if (isset($get['page'])) {
   switch ($get['page']) {
 
     case 'add_image':
-
       include 'post.php';
-
       break;
 
     case 'view_image':
-      $media = view_medias($_SESSION['id']);
       include 'page.php';
-
       break;
 
     default:
-
       include 'page.php';
-
       break;
   }
 } else {
-  $media = view_medias($_SESSION['id']);
   include 'page.php';
 }
 ?>
