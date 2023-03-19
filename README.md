@@ -1,10 +1,6 @@
 # gGallery
-<<<<<<< HEAD
 
- A small web application written in PHP working as a web gallery, for storing images, videos, documents...with upload system without reloading the page.
-=======
 Small web application written in PHP working as a web gallery, for storing images, videos, documents...with upload system without reloading the page.
->>>>>>> b62be73a4e40e3462454bc21470a20edec813958
 
 ## Installation
 
