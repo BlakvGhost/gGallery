@@ -1,7 +1,7 @@
 <?php
 include '../Providers/AppServiceProvider.php';
 
-isset($_SESSION['online'])? null: header("Location:../auth/login.app.php");
+isset($_SESSION['online']) ? null : header("Location:../auth/login.app.php");
 include '../meta.php';
 ?>
 <div class="user">

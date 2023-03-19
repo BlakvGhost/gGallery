@@ -1,49 +1,57 @@
-$(function(s){
-  $('.user_lg').click(()=>{
-    if ($('.user_lg i').hasClass('mdi-account')){
-      $('.user_info').addClass('hidd');
-      $('.user_lg i').attr('class','mdi mdi-close-outline');
+$(function () {
+  const userIcon = $('.user_lg i');
+  const userInfo = $('.user_info');
+
+  $('.user_lg').click(() => {
+    if (userIcon.hasClass('mdi-account')) {
+      userInfo.addClass('hidd');
+      userIcon.attr('class', 'mdi mdi-close-outline');
       $('body').addClass('mainBlue');
-    }else {
-      $('.user_lg i').attr('class','mdi mdi-account');
-      $('.user_info').removeClass('hidd');
+    } else {
+      userIcon.attr('class', 'mdi mdi-account');
+      userInfo.removeClass('hidd');
       $('body').removeClass('mainBlue');
     }
-  })
+  });
 });
-function AsyncManageElement(element,action,id) {
-  let btnSend = Array.prototype.slice.call(document.querySelectorAll('.button'));
-  let ClickIndex = btnSend.indexOf(element);
-  ClickIndex = Math.floor(ClickIndex/2)
-  let titleEl = Array.prototype.slice.call(document.querySelectorAll('.titleEl'));
-  titleEl = titleEl[ClickIndex].value;
-  let capEl = Array.prototype.slice.call(document.querySelectorAll('.captionEl'));
-  capEl = capEl[ClickIndex].value;
 
-  var request = new XMLHttpRequest();
-  let item = document.querySelectorAll('.gallery-item');
-  let itemOvl = document.querySelectorAll('.overlay-element');
-  request.onreadystatechange = (e)=>{
-    let person = document.querySelector('.user_lg i');
-    if ((request.status == 200) && (request.readyState == 4)){
-      if (request.response == 1) {
-        person.classList = 'mdi mdi-cloud-check';
-        if (action == 1){
+function AsyncManageElement(element, action, id) {
+  const buttons = [...document.querySelectorAll('.button')];
+  const clickIndex = Math.floor(buttons.indexOf(element) / 2);
+
+  const titleEl = document.querySelectorAll('.titleEl')[clickIndex].value;
+  const capEl = document.querySelectorAll('.captionEl')[clickIndex].value;
+
+  const items = document.querySelectorAll('.gallery-item');
+  const itemOvl = document.querySelectorAll('.overlay-element');
+
+  const person = document.querySelector('.user_lg i');
+
+  const data = {
+    title: titleEl,
+    caption: capEl,
+    action: action,
+    id: id,
+  }
+  $.ajax({
+    method: 'POST',
+    url: '../actions/manageElement.php',
+    data: data,
+    success: function (_res) {
+      person.classList = 'mdi mdi-cloud-check';
+        if (action === 1) {
           try {
-            item[ClickIndex].classList.add('hide');
-            itemOvl[ClickIndex].classList.add('hide');
+            items[clickIndex].classList.add('hide');
+            itemOvl[clickIndex].classList.add('hide');
           } catch (e) {
-            
           }
-        }else if (action == 2) {
-
-        }
-      }else {
+        }        
+      },
+      error: function (_request, _status, _error) {
         person.classList = 'mdi-cloud-alert';
       }
-      setTimeout(()=>{person.classList = 'mdi mdi-account';},5000)
-    }
-  }
-  request.open('POST',`../actions/manageElement.php?action=${action}&id=${id}&t=${titleEl}&c=${capEl}`);
-  request.send();
+  });
+  setTimeout(() => {
+    person.classList = 'mdi mdi-account';
+  }, 5000);
 }

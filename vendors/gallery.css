@@ -202,7 +202,7 @@ iframe {
 
 @media screen and (max-width: 1100px) {
     .elements-container {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
     }
     .priority-1,
     .priority-2,
@@ -213,11 +213,12 @@ iframe {
       height: 500px;
     }
     .mix-gallery .nav-menu {height: 120px;}
-    .mix-gallery .nav-menu button {font-size: 2.5rem;}
+    /* .mix-gallery .nav-menu button {font-size: 2.5rem;} */
     #gallery-container {margin: 0;width: 100%;}
     .overlay-elTextContainer{
     max-width: 900px;
     max-height: 800px;
+    display: block!important;
   }
 
 }
@@ -291,7 +292,7 @@ iframe {
     display: grid;
     grid-template-columns: 1fr 0.4fr 1fr;
     grid-template-areas: "element element text";
-    /* grid-auto-rows: minmax(500px, 300px); */
+    grid-auto-rows: minmax(500px, 300px);
     background-color: white;
     padding: 35px;
     /* max-width: 50%; */
@@ -483,5 +484,3 @@ iframe {
 .overlay-textContainer .overlayDelete {background-color:burlywood;opacity: 0;z-index: -1;top: 55%!important;}
 .overlay-textContainer .overlayInput  {top: 15%;background-color:burlywood ;opacity: 0;z-index: -1;}
 .overlay-textContainer .overlayInput input {background-color: blanchedalmond;}
-.overlay-textContainer
-.overlay-textContainer

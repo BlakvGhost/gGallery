@@ -1,4 +1,5 @@
 # gGallery
+
  A small web application written in PHP working as a web gallery, for storing images, videos, documents...with upload system without reloading the page.
 
 ## Installation
@@ -13,7 +14,8 @@ Host the project on a local server for your test, or host it on a shared hosting
 
 You can test and create your account [here](https://g-gallery-app.000webhostapp.com)
 
-  ### Database
+### Database
+
   Create a new database:
   | Attr             | Value                                                                |
 | ----------------- | ------------------------------------------------------------------ |
@@ -40,6 +42,7 @@ Then dump the **Providers/gallery.sql** into your new database
 **Server:** PHP
 
 ## Authors
+
 - [@BlakvGhost](https://github.com/BlakvGhost)
 
 ## License

@@ -6,7 +6,7 @@ include '../meta.php';
 ?>
 <div class="container-fluid bg-dark p-0" style="height:100vh">
   <div class="row justify-content-center h-100 w-100 p-0 m-0">
-    <div class="col-6 m-auto fv-sm-w-100">
+    <div class="col-md-6 col-sm-10 col-xs-12 m-auto fv-sm-w-100">
       <div class="card bg-secondary shadow">
         <div class="card-header">
           <div class="p-2 w-50 mx-auto">
