@@ -6,9 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>gGallery - Stocker en toute securité vos fichiers</title>
     <meta name="description" content="gGallery un espace de stockage en toute securité de vos fichiers avec multiple fonctionnalité">
+    <meta name="author" content="Kabirou ALASSANE" />
+    <meta name="keywords" content="gallery,webapp,kabirou, kabirou alassane">
     <link rel="icon" href="/logo.png">
-    <meta name="robots" content="noindex">
-    <meta name="robots" content="nofollow">
+    <meta name="robots" content="index">
+    <meta name="robots" content="follow">
     <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="/vendors/gallery.css">
     <link rel="stylesheet" href="/css/master.css">

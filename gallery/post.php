@@ -20,7 +20,7 @@
               person.classList = 'mdi mdi-cloud-alert';
             });
           },
-          url: "app.controller.php",
+          url: "/ajax/add.gallery",
           paramName: "file",
           maxFilesize: 100,
           timeout: 100000,

@@ -26,7 +26,7 @@ You can test and create your account [here](https://g-gallery-app.000webhostapp.
 
 Then dump the **Providers/gallery.sql** into your new database
 
-**You can edit the function bDConnect() in Provider/AuthServiceProvider.php for your database**
+***You can edit the function bDConnect() in Provider/AuthServiceProvider.php for your database***
 
 ## Screenshots
 

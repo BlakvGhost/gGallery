@@ -1,3 +1,3 @@
 <?php
    
-   header("Location:controller/Logout.controller.php");
+   header("Location:/user/app/logout");

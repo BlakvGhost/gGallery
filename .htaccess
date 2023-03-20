@@ -1,0 +1,19 @@
+Options -Indexes
+
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^user/app/(.*)$ /auth/controller/$1.controller.php [NC,L]
+RewriteRule ^user/(.*)$ /auth/$1.app.php [NC,L]
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^storage/(.*)$ /assets/$1 [L]
+RewriteRule ^ajax/(.*)$ /asynchrone/$1.php [L]
+RewriteRule ^my-gallery$ /gallery/index.php [L]
+RewriteRule ^my-gallery/(.*)$ /gallery/index.php?page=$1 [L]
+RewriteRule ^my-gallery/(.*)$ /gallery/index.php?page=$1 [L]
+
+
+RewriteRule ^(config\.php|\.htaccess|cache|uploads|meta\.php) - [F,L]

@@ -1,23 +1,23 @@
 <?php
-include '../Providers/AppServiceProvider.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Providers/AppServiceProvider.php';
 
-isset($_SESSION['online']) ? null : header("Location:../auth/login.app.php");
-include '../meta.php';
+AuthServiceProvider::mustLogin();
+
+include $_SERVER['DOCUMENT_ROOT'] . '/meta.php';
 ?>
 <div class="user">
   <div class="user_info bxs">
     <div class="">
-      <p><a href="../" class=""><i class="mdi mdi-home-circle-outline"></i>&nbsp;&nbsp; Home </a></p>
+      <p><a href="/my-gallery" class=""><i class="mdi mdi-home-circle-outline"></i>&nbsp;&nbsp; Home </a></p>
       <div class="flex justify-sb">
-        <p><a href="?page=add_image" class=""><i class="mdi mdi-cloud-upload"></i> Upload</a></p>
-        <p><a href="../auth/logout.app.php" class=""><i class="mdi mdi-logout"></i> Logout</a></p>
+        <p><a href="/my-gallery/upload" class=""><i class="mdi mdi-cloud-upload"></i> Upload</a></p>
+        <p><a href="/user/logout" class=""><i class="mdi mdi-logout"></i> Logout</a></p>
         <p><a href="javascript:void(0)"><i class="mdi mdi-cog"></i>Setting </a> </p>
       </div>
     </div>
     <ul class="user_info_ul">
-      <?php $user = user($_SESSION['id']) ?>
-      <li><u>Username</u> : <?php echo $user['username'] ?> </li>
-      <li><u>Storage</u> : <?php echo sumSize($_SESSION['id']) ?> / 2 Go </li>
+      <li><u>Username</u> : <?php echo $_SESSION['user']['username'] ?> </li>
+      <li><u>Storage</u> : <?php echo sumSize($_SESSION['user']['email']) ?> / 2 Go </li>
     </ul>
   </div>
   <div class="user_lg bxs">
@@ -26,15 +26,15 @@ include '../meta.php';
 </div>
 <?php
  $get = $_GET;
- $media = view_medias($_SESSION['id']);
+ $media = view_medias($_SESSION['user']['email']);
 if (isset($get['page'])) {
   switch ($get['page']) {
 
-    case 'add_image':
+    case 'upload':
       include 'post.php';
       break;
 
-    case 'view_image':
+    case 'home':
       include 'page.php';
       break;
 

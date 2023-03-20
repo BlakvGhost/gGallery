@@ -6,13 +6,18 @@ class AuthServiceProvider
 
     static function isLogin()
     {
-        $to =  isset($_SESSION['online']) ? "/gallery/" : "/auth/login.app.php";
+        $to =  isset($_SESSION['user']) ? "/my-gallery" : "/user/login";
         return header('Location:' . $to);
     }
 
     static function isGuest()
     {
-        return !isset($_SESSION['online'])? null: header("Location:/gallery/");   
+        return !isset($_SESSION['user'])? null: header("Location:/my-gallery");   
+    }
+    
+    static function mustLogin()
+    {
+        return !isset($_SESSION['user'])? header("Location:/user/login"): null;   
     }
 
     public function checkUser($user, $email = false)
@@ -37,9 +42,21 @@ class AuthServiceProvider
 
     static function redirectTo($to, $message = '')
     {
-        $to =  '/' . 'auth/' . $to . '.app.php' . '?message=' . $message;
+        $to =  '/' . 'user/' . $to;
+
+        $_SESSION['message'] = $message;
 
         return header('Location:' . $to);
+    }
+
+    static function printSessionMessage()
+    {
+        $message = '';
+        if(isset($_SESSION['message'])){
+            $message = $_SESSION['message'];
+            unset($_SESSION['message']);
+        }
+        return $message;   
     }
 
     static function bDConnect($dbname = 'gallery', $user = 'root', $pass = '')

@@ -35,7 +35,7 @@ function AsyncManageElement(element, action, id) {
   }
   $.ajax({
     method: 'POST',
-    url: '../actions/manageElement.php',
+    url: '/ajax/edit.gallery',
     data: data,
     success: function (_res) {
       person.classList = 'mdi mdi-cloud-check';

@@ -1,8 +1,8 @@
 <?php
-include '../Providers/AppServiceProvider.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Providers/AppServiceProvider.php';
 
-if (!isset($_SESSION['online']) || !$_SESSION['online']) {
-  header('Location:../?msg=Connectez-vous d\'abord');
+if (!isset($_SESSION['user']) || !$_SESSION['user']) {
+  AuthServiceProvider::redirectTo('login', "Connectez-Vous d'abord");
   exit();
 }
 
@@ -21,4 +21,3 @@ if (isset($_POST['id'], $_POST['action'], $_POST['title'], $_POST['caption'])) {
   header('Content-Type: application/json');
   echo json_encode(['error' => 'Paramètres manquants']);
 }
-

@@ -1,5 +1,5 @@
 <?php
-require_once '../../Providers/AuthServiceProvider.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/Providers/AuthServiceProvider.php';
 
 $user = [
     "email" => htmlentities($_POST['email']),
@@ -10,17 +10,18 @@ $user = [
 if (isset($_POST['submit'])) {
     if (!empty($user['email']) && !empty($user['username']) && !empty($user['mdp'])) {
         if (password_verify($_POST['password2'], $user['mdp'])) {
-            $model = AuthServiceProvider::bDConnect();
-            $m = new AuthServiceProvider;
-            if ($m->checkUser($user, true)) {
+            $auth = new AuthServiceProvider;
+            if ($auth->checkUser($user, true)) {
                 return AuthServiceProvider::redirectTo('register', "User Already Exist");
             }
-            $pk = $model->prepare('INSERT INTO Gl_users(email, mdp, username) VALUES (:email, :mdp, :username)');
+            $pk = AuthServiceProvider::bDConnect()
+                ->prepare('INSERT INTO 
+                Gl_users(email, mdp, username) 
+                VALUES (:email, :mdp, :username)
+                ');
             if ($pk->execute($user)) {
-                $_SESSION['online'] = true;
-                $user_d = $m->checkUser($user, true);
-                $_SESSION['id'] = $user_d['id'];
-                return header('Location:../../gallery/');
+                $_SESSION['user'] = $user_d;
+                return header('Location:/my-gallery');
             }
             return AuthServiceProvider::redirectTo('register', "Invalid data");
         }

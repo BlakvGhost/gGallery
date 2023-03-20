@@ -1,8 +1,8 @@
 <?php
-include_once '../Providers/AuthServiceProvider.php';
+include_once $_SERVER['DOCUMENT_ROOT'] . '/Providers/AuthServiceProvider.php';
 
 AuthServiceProvider::isGuest();
-include '../meta.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/meta.php';
 ?>
 <div class="container-fluid bg-dark p-0" style="height:100vh">
   <div class="row justify-content-center h-100 w-100 p-0 m-0">
@@ -19,9 +19,9 @@ include '../meta.php';
           <h5 class="text-center card-title text-white opacity-50">Ouverture de votre compte</h5>
           <div class="my-2">
             <div class="my-3 text-center">
-              <h4 class="text-danger animated shake"><?php if (isset($_GET['message'])) echo $_GET['message']; ?></h4>
+              <h4 class="text-danger animated shake"><?= AuthServiceProvider::printSessionMessage() ?></h4>
             </div>
-            <form action="controller/Register.controller.php" method="post">
+            <form action="/user/app/register" method="post">
               <div class="my-2">
                 <input type="email" required class="form-control bg-light" id="userEmail" name="email" placeholder="Your Email *">
               </div>
@@ -37,7 +37,7 @@ include '../meta.php';
                 <button type="button" class="btn btn-danger password-visible"><i class="mdi mdi-eye-outline"></i></button>
               </div>
               <div class="my-2 d-flex justify-content-between">
-                <a href="login.app.php" class="btn btn-link text-white">Already have account ?</a>
+                <a href="/user/login" class="btn btn-link text-white">Already have account ?</a>
               </div>
               <div class="my-3 text-center">
                 <button class="btn btn-dark w-50" name="submit">Create Your Account</button>
