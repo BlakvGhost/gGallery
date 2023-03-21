@@ -7,12 +7,10 @@ Small web application written in PHP working as a web gallery, for storing image
 Install gGallery with GitHub
 
 ```bash
-  git clone https://github.com/BlakvGhost/gGallery.git
+git clone https://github.com/BlakvGhost/gGallery.git
 ```
 
-Host the project on a local server for your test, or host it on a shared hosting service or a VPS.
-
-You can test and create your account [here](https://g-gallery-app.000webhostapp.com)
+You can then host the project on a local server for testing or on a shared hosting service or a VPS. You can also test and create your account on the app [here](https://g-gallery-app.000webhostapp.com)
 
 ### Database
 
