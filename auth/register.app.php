@@ -29,11 +29,11 @@ include $_SERVER['DOCUMENT_ROOT'] . '/meta.php';
                 <input type="text" required class="form-control bg-light" id="username" name="username" placeholder="Your Username *">
               </div>
               <div class="my-2 input-group">
-                <input type="password" class="form-control bg-light" name="password1" placeholder="Your Password">
+                <input type="password" required class="form-control bg-light" name="password1" placeholder="Your Password">
                 <button type="button" class="btn btn-danger password-visible"><i class="mdi mdi-eye-outline"></i></button>
               </div>
               <div class="my-2 input-group">
-                <input type="password" class="form-control bg-light" name="password2" placeholder="Confirm Password">
+                <input type="password" required class="form-control bg-light" name="password2" placeholder="Confirm Password">
                 <button type="button" class="btn btn-danger password-visible"><i class="mdi mdi-eye-outline"></i></button>
               </div>
               <div class="my-2 d-flex justify-content-between">
