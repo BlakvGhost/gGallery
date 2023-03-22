@@ -40,7 +40,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/meta.php';
                 <a href="/user/login" class="btn btn-link text-white">Already have account ?</a>
               </div>
               <div class="my-3 text-center">
-                <button class="btn btn-dark w-50" name="submit">Create Your Account</button>
+                <button class="btn btn-dark w-50" name="submit" type="submit">Create Your Account</button>
               </div>
             </form>
           </div>

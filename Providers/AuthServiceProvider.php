@@ -19,6 +19,11 @@ class AuthServiceProvider
     {
         return !isset($_SESSION['user'])? header("Location:/user/login"): null;   
     }
+    
+    static function isAdmin()
+    {
+        return !isset($_SESSION['user']['role'])? header("Location:/"): null;   
+    }
 
     public function checkUser($user, $email = false)
     {
