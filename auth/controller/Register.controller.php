@@ -8,7 +8,7 @@ $user = [
 ];
 
 if (isset($_POST['submit'])) {
-    if (!empty($user['email']) && !empty($user['username']) && !empty($user['mdp'])) {
+    if (!empty($user['email']) && !empty($user['username']) && !empty($_POST['password1'])) {
         if (password_verify($_POST['password2'], $user['mdp'])) {
             $auth = new AuthServiceProvider;
             if ($auth->checkUser($user, true)) {
@@ -20,7 +20,7 @@ if (isset($_POST['submit'])) {
                 VALUES (:email, :mdp, :username)
                 ');
             if ($pk->execute($user)) {
-                $_SESSION['user'] = $user_d;
+                $_SESSION['user'] = $user;
                 return header('Location:/my-gallery');
             }
             return AuthServiceProvider::redirectTo('register', "Invalid data");
