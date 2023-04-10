@@ -10,7 +10,7 @@ Install gGallery with GitHub
 git clone https://github.com/BlakvGhost/gGallery.git
 ```
 
-You can then host the project on a local server for testing or on a shared hosting service or a VPS. You can also test and create your account on the app [here](https://g-gallery-app.000webhostapp.com)
+You can then host the project on a local server for testing or on a shared hosting service or a VPS. You can also test and create your account on the app [here](https://g-gallery.42web.io/)
 
 ### Database
 

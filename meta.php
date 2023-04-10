@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,10 @@
     <meta name="description" content="gGallery un espace de stockage en toute securité de vos fichiers avec multiple fonctionnalité">
     <meta name="author" content="Kabirou ALASSANE" />
     <meta name="keywords" content="gallery,webapp,kabirou, kabirou alassane">
-    <link rel="icon" href="/logo.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
     <meta name="robots" content="index">
     <meta name="robots" content="follow">
     <link rel="stylesheet" href="/vendors/bootstrap/bootstrap.min.css">
@@ -24,4 +28,5 @@
     <script src="/js/app.js" charset="utf-8" async></script>
     <script src="/js/app.utils.js" charset="utf-8" async></script>
 </head>
+
 <body>
